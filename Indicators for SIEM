@@ -1,0 +1,27 @@
+ENT {ENT {isIoC} BY
+      [
+         PTFeeds/general,
+         PTFeeds/high-sev,
+         PTFeeds/retro,
+         PTFeeds/retro-sev,
+         PTFeeds/exploiter,
+         PTFeeds/cnc,
+         PTFeeds/phishing,
+         PTFeeds/download,
+         PTFeeds/upload,
+         PTFeeds/mal-class,
+         PTFeeds/mal-class-recent-act,
+         PTFeeds/mal-family,
+         PTFeeds/mal-family-recent-act,
+         PTFeeds/mal-campaign,
+         PTFeeds/mal-campaign-recent-act,
+         PTFeeds/mal-group,
+         PTFeeds/mal-group-recent-act,
+         PTFeeds/cybercrime,
+         PTFeeds/apt,
+         User,
+         PTIAMUser
+      ] CONF 0.5
+} ANDNOT 
+      ENT {isTrusted} CONF 0.4
+}
