@@ -1,0 +1,18 @@
+/*
+Выборка индикаторов, проявлявших активность за последний месяц, а так же сущности из коллекции malicious(general). 
+В выборку попадут индикаторы с уверенностью не ниже 0.5, а также "Доверенные" снщности, уверенность в которых ниже 0.4
+*/
+
+ENT {ENT {isIoC} BY [
+								PTFeeds/general,
+								PTFeeds/recent_act,
+								PTFeeds/recent_act_sev,
+								PTFeeds/mal_class,
+								PTFeeds/mal_class_recent_act,
+								PTFeeds/mal_family_recent_act,
+								PTFeeds/mal_campaign_recent_act,
+								PTFeeds/mal_group_recent_act
+								] CONF 0.5
+ANDNOT 
+      ENT {isTrusted} CONF 0.4
+}
