@@ -1,0 +1,21 @@
+/*
+Сущности, которые эксплуатируют конкретные уязвимости, а также сущности, которые подключаются к тем, 
+кто эксплуатирует, за исключением доверенных сущностей с уверенностью выше 0.4
+*/
+
+ENT {
+ENT {ExploitedVulnerabilities IN [
+    'CVE-2022-30190', 'CVE-2017-11882' 
+   
+]}
+OR
+TARGETOF REL
+{
+  ENT {ExploitedVulnerabilities IN [
+    'CVE-2022-30190', 'CVE-2017-11882' 
+   
+]}
+  -[ConnectsTo]
+  ENT}
+  ANDNOT ENT {isTrusted} CONF 0.4
+}
