@@ -1,0 +1,9 @@
+ENT{ 
+   ENT{ExploitedVulnerabilities IN [<Vulnerabilities>]} CONF 0.4 
+   OR TARGETOF REL{ 
+                  ENT{ExploitedVulnerabilities IN [<Vulnerabilities>]} 
+                  -[ConnectsTo] 
+                  ENT} CONF 0.8 
+   OR ENT {isIoC} BY [<CustomSource>] 
+   ANDNOT ENT {isTrusted} CONF 0.4 
+   ANDNOT ENT {TargetedSectors='<yourSector>'}}
