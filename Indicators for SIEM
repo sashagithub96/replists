@@ -1,4 +1,4 @@
-ENT {ENT {isIoC} BY
+ENT { ENT {isIoC} BY
       [
          PTFeeds/general,
          PTFeeds/high-sev,
@@ -22,7 +22,8 @@ ENT {ENT {isIoC} BY
          User,
          PTIAMUser
       ] CONF 0.5
-} ANDNOT
-{
+      ANDNOT
+
       ENT {isTrusted} CONF 0.4
-}
+} 
+
